@@ -1,0 +1,45 @@
+{
+	"response": {
+		"location": "request",
+		"mimeType": "application/json"
+	},
+	"requests": [{
+		"name": "VisitorAnalyticsAggregation",
+		"pipeline": [{
+			"source": {
+				"events": {
+					"appId": []
+				},
+				"timeSeries": {
+					"period": "dayRange",
+					"first": 1558065600000,
+					"count": 90
+				}
+			}
+		}, {
+			"identified": "visitorId"
+		}, {
+			"segment": {
+				"id": "dl9O7_t7TRqooOjaSQTvzXLq3jo"
+			}
+		}, {
+			"reduce": {
+				"uniqueVisitors": {
+					"count": "visitorId"
+				},
+				"totalTimeInMinutes": {
+					"sum": "numMinutes"
+				},
+				"visitorsByDay": {
+					"count": ["visitorId", "day"]
+				}
+			}
+		}, {
+			"select": {
+				"uniqueVisitors": "uniqueVisitors",
+				"avgTime": "if(visitorsByDay > 0, (totalTimeInMinutes * 60 * 1000) / visitorsByDay, 0)"
+			}
+		}],
+		"requestId": "VisitorAnalyticsAggregation-50c51b07-c405-44e2-93b7-20a9e04388c7"
+	}]
+}

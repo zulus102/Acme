@@ -238,11 +238,13 @@
               </div>
             </li>
 
-            <select id="dopdown">
-               <option>Choose This</option>
-               <option>Choose This Instead</option>
-               <option>Choose This This</option>
-             </select>
+            <div class="table-container sc-iAyFgw gPlgsX sc-dnqmqq gXuRiM" data-table-name="explorerUiAssets">
+            <div class="table-actions sc-htoDjs kxDkgK">
+              <button type="button" class="btn btn--tertiary" data-analytics-action="export-to-csv">
+                <span>Export to CSV</span>
+              </button>
+            </div>
+            </div>
 
              <button>NOT ALWAYS HERE</button>
 
@@ -338,6 +340,8 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
+<iframe src="/tables.html"></iframe>
+        
         <div class="container-fluid">
 
           <!-- Page Heading -->
@@ -694,47 +698,92 @@
   })();
 
 
-</script>
+// </script>
 
-  <!-- Pendo Scripts -->
-<script>
-(function(apiKey){
-    (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
-    v=['initialize','identify','updateOptions','pageLoad', 'trackEvents'];for(w=0,x=v.length;w<x;++w)(function(m){
-        o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
-        y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
-        z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+//   <!-- Pendo Scripts -->
+// <script>
+//   // WORKING NORMAL PENDO SCRIPT 
+// (function(apiKey){
+//     (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
+//     v=['initialize','identify','updateOptions','pageLoad', 'trackEvents'];for(w=0,x=v.length;w<x;++w)(function(m){
+//         o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+//         y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
+//         z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+        
+//         // Call this whenever information about your visitors becomes available
+//         // Please use Strings, Numbers, or Bools for value types.
+//          pendo.initialize({
+//             visitor: {
+//                 id:           'new-user',   // Required if user is logged in
+//                 email:        'hello@hello.com',
+//                 roles:        ['admin', 'test', 'user']
+//             },
 
-        // Call this whenever information about your visitors becomes available
-        // Please use Strings, Numbers, or Bools for value types.
-         pendo.initialize({
-            visitor: {
-                id:           'VISITOR-UNIQUE-ID',   // Required if user is logged in
-                email:        "stoffer@pendo.io"
-            },
+//             account: {
+//                 id:           'New Account', // Highly recommended
+//                 username:     'toddstoffer'
+//             }
+//         });
 
-            account: {
-                id:           'stoffer-account', // Highly recommended
-                username:     'toddstoffer'
-            },
-           parentAccount: {
-                id:           'stoffer-parent-account',
-                name:         'name'
+// })('5ba2118f-b462-47f9-66eb-e0eeddbf109d');
+// </script>
 
-            }
-        });
 
-})('5ba2118f-b462-47f9-66eb-e0eeddbf109d');
-</script>
 
-<!--  <script>
-  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
-  analytics.load("VXrEPSlhnbVxODjBTfrk0sbdU29jLcNd");
-  analytics.page();
-  analytics.identify('todd-segment');
-  analytics.group('toddstoffer.github.io');
-  }}();
-</script> -->
+
+ <!-- <script> 
+    // WORKING SEGMENT SCRIPT
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+        analytics.load("VXrEPSlhnbVxODjBTfrk0sbdU29jLcNd");
+        analytics.page();
+        
+        }}();
+  
+      analytics.identify("userId1", {
+        name: "Peter Gibbons", 
+        email: "peter@initech.com", 
+        group: "stoffer"
+      });
+      
+      analytics.group("0e8c78ea9d97a7b8185e8632", {
+        name: "Initech", 
+        industry: "Technology",
+        employees: 329, 
+        plan: "enterprise"
+      }); 
+  </script> -->
+
+  <!-- <script type="text/javascript">
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+    analytics.load("VXrEPSlhnbVxODjBTfrk0sbdU29jLcNd");
+    analytics.page();
+    }}();
+    
+    analytics.identify('newwwwwwwwwwww', {
+        groupId: 'groupsentwithidentify',
+       name: 'Michael Bolton',
+      email: 'mbolton@initech.com'
+    });
+    
+    analytics.group('SegmentAccount1', {
+      principles: ['Eckert', 'Mauchly'],
+      site: 'Eckert–Mauchly Computer Corporation',
+      statedGoals: 'Develop the first commercial computer',
+      industry: 'Technology'
+    });
+    
+    </script> -->
+
+    <!-- <script> 
+    // Claire's - THIS IS A WORKING SEGMENT SETUP DON'T DELETE THIS 
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+        analytics.load("VXrEPSlhnbVxODjBTfrk0sbdU29jLcNd");
+        analytics.page();
+        analytics.identify('visitorTest', { user_id: 'testUser'})
+        analytics.group('testing')
+        
+              }}();
+  </script> -->
 
 </body>
 

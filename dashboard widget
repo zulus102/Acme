@@ -1,0 +1,43 @@
+{
+	"response": {
+		"location": "request",
+		"mimeType": "application/json"
+	},
+	"requests": [{
+		"name": "browser-chart-count-by-browser-297",
+		"pipeline": [{
+			"source": {
+				"events": {
+					"appId": "expandAppIds(\"web\")"
+				},
+				"timeSeries": {
+					"period": "dayRange",
+					"first": "dateAdd(startOfPeriod(\"daily\",now()),-90,\"days\")",
+					"last": "dateAdd(startOfPeriod(\"daily\",now()),-1,\"days\")"
+				}
+			}
+		}, {
+			"identified": "visitorId"
+		}, {
+			"segment": {
+				"id": "dl9O7_t7TRqooOjaSQTvzXLq3jo"
+			}
+		}, {
+			"useragent": {
+				"browser": "userAgent"
+			}
+		}, {
+			"group": {
+				"group": ["browser.name", "browser.version", "browser.renderVersion"],
+				"fields": [{
+					"count": {
+						"count": "visitorId"
+					}
+				}]
+			}
+		}, {
+			"sort": ["-count"]
+		}],
+		"requestId": "browser-chart-count-by-browser-297-e586280a-841b-4bbe-9349-900db28c1bec"
+	}]
+}
